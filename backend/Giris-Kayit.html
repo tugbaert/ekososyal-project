@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş/Kayıt - Çevreci Site</title>
+    <link rel="stylesheet" href="CSS/Giriş-Kayıt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="CSS/Anasayfa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+
+
+     <header class="main-header">
+        <a href="Anasayfa.html" class="logo">🌿 EKOSOSYAL</a>
+        
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="Anasayfa.html">Anasayfa</a></li>
+                <li><a href="TemelBilgiler.html">Temel Bilgiler</a></li>
+                <li><a href="Etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="Anketler.html">Anketler</a></li>
+                <li><a href="CevreSorunuBildir.html">Gönderiler</a></li>
+                <li><a href="Profil.html"><i class="fas fa-user"></i> Profil</a></li>
+                <li><a href="Giris-Kayit.html" class="cta-button">Giriş/Kayıt</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Menü Aç">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+
+    <div id="ekososyalMessage" class="custom-notification hidden">
+    <div class="notification-header">
+        <i class="fas fa-leaf"></i>
+        <h3>EKOSOSYAL MESAJI</h3>
+        <button id="closeNotification" class="close-btn">&times;</button>
+    </div>
+    <div class="notification-body">
+        <p id="notificationText"></p>
+    </div>
+</div>
+
+
+    <div class="container">
+        <header class="header">
+            <i class="fas fa-leaf logo-icon"></i>
+            <h1>EKOSOSYAL'E Hoş Geldiniz!</h1>
+        </header>
+
+        <div class="main-options" id="mainOptions">
+            <p>Lütfen bir seçenek belirleyin:</p>
+            <button class="btn primary-btn" id="showLoginBtn">
+                <i class="fas fa-sign-in-alt"></i> Giriş Yapınız
+            </button>
+            <button class="btn secondary-btn" id="guestBtn">
+                <i class="fas fa-user-secret"></i> Misafir Kullanıcı Olarak Devam Et
+            </button>
+            <p class="switch-text">Henüz üye değil misiniz? <a href="#" id="showRegisterLink">Kayıt Olun!</a></p>
+        </div>
+
+        <div class="form-card hidden" id="loginForm">
+            <h2>Giriş Yap</h2>
+            <form id="login">
+                <div class="input-group">
+                    <label for="loginEmail"><i class="fas fa-envelope"></i> E-Posta</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Şifre</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Giriş Yap</button>
+                <a href="#" class="back-link" id="backToMainFromLogin"><i class="fas fa-arrow-left"></i> Geri</a>
+            </form>
+        </div>
+
+        <div class="form-card hidden" id="registerForm">
+            <h2>Hemen Kayıt Ol</h2>
+            <form id="register">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Kullanıcı Adı</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="dob"><i class="fas fa-calendar-alt"></i> Doğum Tarihi</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> E-Posta</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Şifre</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+                
+                <div class="input-group">
+                    <label for="gender"><i class="fas fa-venus-mars"></i> Cinsiyet</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Seçiniz</option>
+                        <option value="erkek">Erkek</option>
+                        <option value="kadın">Kadın</option>
+                        <option value="belirtmek-istemiyor">Belirtmek İstemiyor</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="role"><i class="fas fa-seedling"></i> Kullanıcı Rolü</label>
+                    <select id="role" name="role" required>
+                        <option value="">Seçiniz</option>
+                        <option value="kisisel">Kişisel Hesap</option>
+                        <option value="kulup">Kulüp/Organizasyon</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Kayıt Ol</button>
+                <a href="#" class="back-link" id="backToMainFromRegister"><i class="fas fa-arrow-left"></i> Geri</a>
+            </form>
+            <p class="switch-text">Zaten üye misiniz? <a href="#" id="showLoginLink">Giriş Yapın!</a></p>
+        </div>
+    </div>
+
+    <script src="JavaScript/Giris-Kayit.js"></script>
+    <script src="JavaScript/Anasayfa.js"></script>
+</body>
+</html>

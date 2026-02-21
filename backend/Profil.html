@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Profil.css">
+
+    <link rel="stylesheet" href="CSS/Anasayfa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+
+     <header class="main-header">
+        <a href="Anasayfa.html" class="logo">🌿 EKOSOSYAL</a>
+        
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="Anasayfa.html">Anasayfa</a></li>
+                <li><a href="TemelBilgiler.html">Temel Bilgiler</a></li>
+                <li><a href="Etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="Anketler.html">Anketler</a></li>
+                <li><a href="CevreSorunuBildir.html">Gönderiler</a></li>
+                <li><a href="Profil.html" class="highlight-link"><i class="fas fa-user"></i> Profil</a></li>
+                <li><a href="Giris-Kayit.html" class="cta-button">Giriş/Kayıt</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Menü Aç">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+
+    <div id="login-required" class="hidden" style="text-align: center; padding: 50px;">
+        <h2>Giriş Yapılmadı</h2>
+        <p>Devam etmek için lütfen giriş yapın.</p>
+    </div>
+
+    <div id="profile-container" class="profile-container hidden">
+
+        <div class="left-section">
+            <div class="profile-header">
+                <div class="avatar-ring">
+                    <i class="fas fa-user-circle fa-3x"></i>
+                </div>
+                <div>
+                    <h1>Hoş Geldiniz, <span id="username-display"></span></h1>
+                    <p class="role-display"><i class="fas fa-users"></i> Rol: <span id="role-display"></span></p>
+                </div>
+            </div>
+
+            <h3>Haftalık Görevler</h3>
+            <div id="weekly-tasks" class="task-grid">
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="total-score-card">
+                <h4>Toplam Yeşil Puanım</h4>
+                <p id="total-score-display">0</p>
+            </div>
+            
+            <div class="earned-badges-wrapper">
+                <h4>Kazanılan Rozetler</h4>
+                <div id="earned-badges-display" class="earned-badges-container">
+                </div>
+            </div>
+            <h3>Rozetler</h3>
+            <div id="badges-list">
+            </div>
+        </div>
+    </div>
+    
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Kanıt Yükle: <span id="modal-task-title"></span></h4>
+            
+            <div id="submission-message" class="hidden success-message">
+                <i class="fas fa-check-circle"></i>
+                <p>Başarılı! <span id="gained-points-display">0</span> puan kazandınız.</p>
+            </div>
+            
+            <div id="submission-form-content">
+                <p>Görevi tamamladığınızı kanıtlayan fotoğrafı yükleyin.</p>
+                
+                <div class="file-input-container">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Bir fotoğraf seçmek için tıklayın veya sürükleyip bırakın.</span>
+                    <input type="file" id="task-image-upload" accept="image/*">
+                    <span id="selected-file-name">Henüz dosya seçilmedi.</span>
+                </div>
+
+                <button id="submit-task-photo">Gönder ve Puan Kazan</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScript/Profil.js"></script>
+    <script src="JavaScript/Anasayfa.js"></script>
+</body>
+</html>

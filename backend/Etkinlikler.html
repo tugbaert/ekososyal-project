@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çevreci Etkinlikler</title>
+    <link rel="stylesheet" href="CSS/Etkinlikler.css"> 
+    <link rel="stylesheet" href="CSS/Anasayfa.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+
+     <header class="main-header">
+        <a href="Anasayfa.html" class="logo">🌿 EKOSOSYAL</a>
+        
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="Anasayfa.html">Anasayfa</a></li>
+                <li><a href="TemelBilgiler.html">Temel Bilgiler</a></li>
+                <li><a href="Etkinlikler.html" class="highlight-link">Etkinlikler</a></li>
+                <li><a href="Anketler.html">Anketler</a></li>
+                <li><a href="CevreSorunuBildir.html">Gönderiler</a></li>
+                <li><a href="Profil.html"><i class="fas fa-user"></i> Profil</a></li>
+                <li><a href="Giris-Kayit.html" id="auth-link" class="cta-button">Giriş/Kayıt</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Menü Aç">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+
+    <header class="page-title-header">
+        <h1>🌱 Çevreci Etkinlikler Sayfası</h1>
+        <p>Gezegenimiz için bir araya geliyoruz.</p>
+    </header>
+
+    <div class="top-controls">
+        <button id="add-event-btn" class="action-btn" style="display: none;">🔔 Duyuru Yap</button>
+    </div>
+
+    <main>
+        <section id="event-list-section">
+            <h2>Aktif Etkinlikler</h2>
+            <div id="event-list" class="list-container">
+                </div>
+        </section>
+
+        <section id="event-detail-section" class="detail-container" style="display: none;">
+            <button id="back-to-list-btn" class="action-btn back-btn">← Geri Dön</button>
+            <div id="event-detail-content">
+                </div>
+
+            <div id="comment-section">
+                <h3>Yorum Yap</h3>
+                <textarea id="comment-input" placeholder="Yorumunuzu buraya yazın..." maxlength="500"></textarea>
+                <button id="post-comment-btn" class="action-btn comment-btn">Yorumu Gönder</button>
+            </div>
+
+            <div id="comments-list">
+                <h4>Yapılan Yorumlar (Sadece Görüntü Amaçlı)</h4>
+                </div>
+        </section>
+
+        <div id="event-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Yeni Etkinlik Duyurusu</h2>
+                <form id="new-event-form">
+                    <label for="event-title">Etkinlik Adı:</label>
+                    <input type="text" id="event-title" required>
+
+                    <label for="event-description">Açıklama:</label>
+                    <textarea id="event-description" required></textarea>
+
+                    <label for="event-date">Tarih:</label>
+                    <input type="date" id="event-date" required>
+                    
+                    <label for="event-page-url">Bağlantı Adresi (URL) (İsteğe Bağlı):</label>
+                    <input type="text" id="event-page-url" placeholder="https://...">
+                    <p style="font-size: 0.85em; color: #555; margin-top: -10px; margin-bottom: 15px;">
+                    Eğer bir web sitesi yoksa bu alanı boş bırakabilirsiniz.
+                    </p>
+                    <label for="event-image" class="action-btn neumo-btn secondary">
+                        <i class="fas fa-camera"></i> Fotoğraf Ekle
+                    </label>
+                    <input type="file" id="event-image" accept="image/*" required style="display:none;">
+
+                    <button type="submit" class="action-btn">Duyuruyu Yayınla</button>
+                </form>
+            </div>
+        </div>
+    </main>
+<div id="custom-confirm-modal" class="confirm-modal">
+    <div class="confirm-content">
+        <div class="confirm-header">❓ Onaylıyor musunuz?</div>
+        <div class="confirm-body" id="confirm-msg">İşlemi onaylıyor musunuz?</div>
+        <div class="confirm-actions">
+            <button id="confirm-no-btn" class="action-btn cancel-btn">Vazgeç</button>
+            <button id="confirm-yes-btn" class="action-btn confirm-btn-style">Evet, Sil</button>
+        </div>
+    </div>
+</div>
+    <script src="JavaScript/Etkinlikler.js"></script>
+    <script src="JavaScript/Anasayfa.js"></script>
+
+</body>
+</html>

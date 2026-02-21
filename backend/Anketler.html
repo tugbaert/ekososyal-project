@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anketler</title>
+  <link rel="stylesheet" href="CSS/Anketler.css" />
+
+  <link rel="stylesheet" href="CSS/Anasayfa.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+
+  <header class="main-header">
+        <a href="Anasayfa.html"  class="logo">🌿 EKOSOSYAL</a>
+        
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="Anasayfa.html">Anasayfa</a></li>
+                <li><a href="TemelBilgiler.html">Temel Bilgiler</a></li>
+                <li><a href="Etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="Anketler.html" class="highlight-link">Anketler</a></li>
+                <li><a href="CevreSorunuBildir.html">Gönderiler</a></li>
+                <li><a href="Profil.html"><i class="fas fa-user"></i> Profil</a></li>
+                <li><a href="Giris-Kayit.html" class="cta-button">Giriş/Kayıt</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Menü Aç">
+            <i class="fas fa-bars"></i>
+        </button>
+  </header>
+
+
+  <div class="container">
+    <h1 id="anaBaslik">Çevre Farkındalığı Anketleri</h1>
+
+    <div id="anketListesi">
+      <button class="anket-btn" onclick="anketiBaslat('cevrecimisiniz')">
+        🌳 Ne kadar çevrecisiniz?
+        <p style="font-size: 14px;">Günlük yaşam alışkanlıklarınıza göre çevreye duyarlılığınızı ölçün.</p>
+      </button>
+      <button class="anket-btn" onclick="anketiBaslat('hayvansever')">
+        🐾 Patili dostlara bakışımız
+        <p style="font-size: 14px;">Hayvan sevgisi, empati ve doğayla uyumlu yaşam anlayışınızı test edin.</p>
+      </button>
+      <button class="anket-btn" onclick="anketiBaslat('topraginsesi')">
+        💧 Toprağın Sesi
+         <p style="font-size: 14px;">Su israfı ve kuraklık konularındaki davranışlarınızı değerlendirin.</p>
+      </button>  
+      <button class="anket-btn" onclick="anketiBaslat('minimalAtik')">
+        ♻️ Minimal Atık, Maximum Etki
+        <p style="font-size: 14px;">Geri dönüşüm ve sıfır atık yaklaşımına ne kadar uyumlusunuz?</p>
+      </button> 
+      <button class="anket-btn" onclick="anketiBaslat('karbonAyakizi')">
+        💨 Karbon Ayak İzi
+        <p style="font-size: 14px;">Ulaşım ve enerji tüketimi alışkanlıklarınıza göre karbon salınımınızı ölçün.</p>
+      </button>
+      <button class="anket-btn" onclick="anketiBaslat('iklimNabzi')">
+        🌎 İklim Nabzı
+         <p style="font-size: 14px;">İklim değişikliği farkındalığınızı ve çevresel kaygınızı değerlendirin.</p>
+      </button>
+
+    </div>
+    <div id="anketAlani" class="hidden">
+      <h2 id="anketBaslik"></h2>
+    <div class="progress-bar-container" id="anket-progress-container">
+        <div class="progress-bar" id="anket-progress-bar" style="width: 0%;"></div>
+        <span class="progress-text" id="anket-progress-text">0% İlerlendi</span>
+    </div>
+    <form id="anketFormu"></form>
+      <button id="gonderBtn" onclick="anketiGonder()">Gönder</button>
+      <button id="geriBtn" onclick="anketleriGoster()">← Geri dön</button>
+      <button id="tekrarBtn" onclick="anketiTekrarCoz()">Tekrar Çöz</button>
+      <p id="sonucMetni"></p>
+    </div>
+  </div>
+
+  <script src="JavaScript/Anketler.js"></script>
+  <script src="JavaScript/Anasayfa.js"></script>
+</body>
+</html>

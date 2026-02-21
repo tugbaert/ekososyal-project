@@ -1,0 +1,349 @@
+/* Bu stil, yeni eklediğimiz üst menü ile sayfa başlığı arasındaki boşluğu düzenler */
+.page-title-header {
+    text-align: center;
+    padding: 20px 0 40px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    margin-top: 120px; /* Sabit menüden dolayı yukarıdan boşluk bırakır */
+}
+
+
+
+/* Genel Stil ve Yeşil Tema */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8e9; /* Açık Yeşil Zemin */
+    color: #388e3c; /* Koyu Yeşil Metin */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4CAF50; /* Ana Yeşil Renk */
+    color: #4CAF50;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #1b5e20; /* Çok Koyu Yeşil Başlık */
+}
+
+/* Buton Stilleri */
+.action-btn {
+    background-color: #2db534; /* Daha Canlı Yeşil Buton */
+    color: white;
+    border: none;
+    height: 45px;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #2db534;
+}
+
+/* Ana İçerik ve Konteynerler */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.top-controls {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Etkinlik Listesi Stili */
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #c8e6c9; /* Açık Yeşil Çerçeve */
+    border-radius: 6px;
+    background-color: #f9fff6; /* Çok Açık Yeşil Arka Plan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.list-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+    border: 1px solid #a5d6a7;
+    flex-shrink: 0; /* Küçülmesini engeller */
+}
+
+.list-item-content {
+    flex-grow: 1;
+}
+
+.list-item h3 {
+    margin-top: 0;
+    color: #388e3c;
+    font-size: 1.2em;
+}
+
+.list-item-actions {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+/* Etkinlik Detay Stili */
+.detail-container {
+    padding: 20px;
+    border: 2px solid #a5d6a7;
+    border-radius: 8px;
+}
+
+#event-detail-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Yorum Alanı Stili */
+#comment-section {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 2px solid #c8e6c9;
+}
+
+#comment-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #a5d6a7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.comment-btn {
+    background-color: #5b9f5d;
+}
+
+/* Modal Stilleri (Duyuru Yap) */
+.modal {
+    display: none; /* Varsayılan olarak gizli */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Ortalamak için */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #4CAF50;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#new-event-form input[type="text"], 
+#new-event-form textarea, 
+#new-event-form input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* DUYURU YAP BUTONU İÇİN ÖZEL STİLLER */
+#add-event-btn {
+    /* Butonu Büyütme */
+    font-size: 1.1em; /* Yazı boyutunu büyüt */
+    padding: 12px 25px;/* İç boşluğu (padding) artırarak butonu büyüt */
+    
+    /* Dikkat Çekici Renk/Gölge */
+    background-color: #FF5722; /* Canlı Turuncu/Kırmızı (Acil Durum Hissi) */
+    color: white; /* Beyaz yazı rengi */
+    font-weight: bold; /* Kalın yazı */
+    border-radius: 8px;/* Köşeleri daha belirgin yap */
+    box-shadow: 0 4px 6px rgba(255, 87, 34, 0.4); /* Canlı gölge ekle */
+    
+    /* Üzerine Gelince (Hover) Efekti */
+    transition: all 0.2s ease-in-out;
+}
+
+#add-event-btn:hover {
+    background-color: #E64A19; /* Daha koyu turuncu */
+    transform: translateY(-2px); /* Hafifçe yukarı kaydırarak 3D efekti ver */
+    box-shadow: 0 6px 8px rgba(255, 87, 34, 0.6);
+}
+/* Modal içindeki açıklama metni stili */
+/*bağlantı adresi için*/
+.modal-content p {
+    color: #388e3c !important; /* Koyu yeşil ton */
+    font-style: italic;
+    padding-left: 5px;
+}
+
+
+/* ** ÖZEL TOAST BİLDİRİM STİLİ (Ekososyal Mesajı) ** */
+.custom-notification {
+    /* Konumlandırma */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Diğer her şeyin üstünde görünmesini sağla */
+
+    /* Görünüm */
+    background-color: #f9fff6; /* Çok Açık Yeşil */
+    border: 2px solid #388e3c; /* Koyu Yeşil Çerçeve */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Genişlik */
+    
+    /* İçerik Stili */
+    font-size: 1em;
+    color: #1b5e20;
+    
+    /* Animasyon (Varsayılan olarak gizli) */
+    opacity: 0;
+    transform: translateX(100%); /* Başlangıçta ekran dışı */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* Bildirimin görünür olduğu durum */
+.custom-notification.show {
+    opacity: 1;
+    transform: translateX(0); /* Ekran içine kaydır */
+}
+
+/* Bildirim Başlığı (Ekososyal) */
+.notification-header {
+    background-color: #4CAF50; /* Ana Yeşil Renk */
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #388e3c;
+    display: flex;
+    align-items: center;
+}
+
+/* Bildirim İçeriği (Mesaj) */
+.notification-body {
+    padding: 15px;
+    line-height: 1.4;
+}
+
+/* Hata Mesajı İçin Özel Stil (isteğe bağlı) */
+.custom-notification.error .notification-header {
+    background-color: #d32f2f; /* Hata için Kırmızı */
+}
+
+/* Silme butonu hover efekti */
+.delete-event-btn:hover {
+    background-color: #b71c1c !important; /* Daha koyu kırmızı */
+}
+
+/* Yorum silme ikonu hover efekti */
+.delete-comment-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+/* ÖZEL CONFIRM (ONAY) PENCERESİ STİLİ */
+.confirm-modal {
+    display: none; /* Varsayılan gizli */
+    position: fixed;
+    z-index: 10000; /* Her şeyin üstünde */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Arka planı karart */
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-content {
+    background-color: #fff;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    overflow: hidden;
+    animation: popIn 0.3s ease;
+}
+
+/* Animasyon: Pencere büyüyerek gelir */
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.confirm-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.confirm-body {
+    padding: 20px;
+    font-size: 1em;
+    color: #333;
+}
+
+.confirm-actions {
+    padding: 15px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Buton Özelleştirmeleri */
+.confirm-btn-style {
+    background-color: #d32f2f !important; /* Silme işlemi olduğu için Kırmızı */
+    min-width: 100px;
+}
+.cancel-btn {
+    background-color: #757575 !important; /* Gri */
+    min-width: 100px;
+}
+.confirm-btn-style:hover { background-color: #b71c1c !important; }
+.cancel-btn:hover { background-color: #616161 !important; }

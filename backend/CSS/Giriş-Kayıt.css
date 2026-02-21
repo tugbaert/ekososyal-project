@@ -1,0 +1,246 @@
+
+/* Temel Sıfırlamalar ve Fontlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8e9; /* Açık yeşil/bej arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Renk Paleti */
+:root {
+    --primary-color: #4CAF50; /* Yeşil */
+    --secondary-color: #8BC34A; /* Açık Yeşil */
+    --text-color: #333;
+    --card-bg: #fff;
+    --shadow-color: rgba(76, 175, 80, 0.2);
+}
+
+/* Kapsayıcı (Container) */
+.container {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Başlık Alanı */
+.header {
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.container h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Ana Buton Alanı */
+.main-options p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Butonlar */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Form Kartı */
+.form-card {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.form-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Giriş Grupları */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Bağlantılar ve Geri Butonu */
+.switch-text {
+    margin-top: 20px;
+    color: #666;
+}
+
+.switch-text a, .back-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.switch-text a:hover, .back-link:hover {
+    color: #43A047;
+    text-decoration: underline;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Gizleme Sınıfı */
+.hidden {
+    display: none;
+}
+
+
+
+/* style.css dosyasına yeni stilleri ekleyin */
+
+/* Özel Bildirim Kutusu (Custom Notification) */
+.custom-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 350px;
+    background-color: #e8f5e9; /* Açık yeşil arka plan */
+    border: 2px solid var(--primary-color); /* Yeşil sınır */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+    transform: translateX(120%); /* Başlangıçta ekran dışına gizle */
+    transition: transform 0.4s ease-in-out;
+}
+
+.custom-notification.show {
+    transform: translateX(0); /* Gösterildiğinde ekrana kaydır */
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color); /* Yeşil başlık */
+    color: white;
+    padding: 10px 15px;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.notification-header i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.notification-body {
+    padding: 15px;
+    color: var(--text-color);
+}
+
+.notification-body p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+    opacity: 0.8;
+}
+
+/* Mevcut hidden sınıfını kullanmaya devam ediyoruz */
+/* .hidden { display: none; } */
